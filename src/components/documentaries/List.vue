@@ -26,7 +26,9 @@ onMounted(async() => {
     <p v-if="error">{{ error }}</p>
     <ul v-else>
       <li v-for="doc in documentaries" :key="doc.id">
-        <h2>{{ doc.title }}</h2>
+        <h2>
+          <router-link :to="`/documentaries/view/${doc.id}`">{{ doc.title }}</router-link>
+        </h2>
         <h3>{{ doc.id }}</h3>
         <p>{{ doc.director }}</p>
       </li>

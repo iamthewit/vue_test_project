@@ -3,11 +3,12 @@
   import { ref } from 'vue';
   import axios from "axios";
   import { v4 as uuidv4 } from 'uuid';
+  import { useRouter } from 'vue-router';
 
   defineOptions({
     name: 'Create',
   });
-
+  const router = useRouter();
   const documentary = ref({
     id: uuidv4(),
     title: '',
@@ -22,6 +23,7 @@
       .then(response => {
         console.log("Documentary created:", response.data);
         // Optionally, redirect or show a success message
+        router.push("/documentaries/view/" + response.data.id);
       })
       .catch(error => {
         console.error("Error creating documentary:", error);
@@ -38,8 +40,8 @@
         <input type="text" id="title" v-model="documentary.title" required />
       </div>
       <div>
-        <label for="description">Description:</label>
-        <textarea id="description" v-model="documentary.director" required></textarea>
+        <label for="description">Director:</label>
+        <input type="text" id="description" v-model="documentary.director" required />
       </div>
       <button type="submit">Create</button>
     </form>
