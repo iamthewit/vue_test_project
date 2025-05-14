@@ -47,6 +47,9 @@ function updateDocumentary() {
     <div v-else-if="documentary">
       <form @submit.prevent="updateDocumentary">
         <div>
+          <p>ID: {{documentary.id}}</p>
+        </div>
+        <div>
           <label for="title">Title:</label>
           <input type="text" id="title" v-model="documentary.title" required />
         </div>

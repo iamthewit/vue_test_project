@@ -32,7 +32,7 @@ onMounted(async() => {
       <h4>Director: {{ documentary.director }}</h4>
       <div>
         <router-link :to="`/documentaries/update/${documentary.id}`">Update</router-link>
-<!--        <router-link :to="`/documentaries/delete/${documentary.id}`">Delete</router-link>-->
+        <router-link :to="`/documentaries/delete/${documentary.id}`">Delete</router-link>
       </div>
     </div>
     <div v-else>
