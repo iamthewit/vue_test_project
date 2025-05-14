@@ -30,6 +30,10 @@ onMounted(async() => {
       <h2>ID: {{ documentary.id }}</h2>
       <h3>Title: {{ documentary.title }}</h3>
       <h4>Director: {{ documentary.director }}</h4>
+      <div>
+        <router-link :to="`/documentaries/update/${documentary.id}`">Update</router-link>
+<!--        <router-link :to="`/documentaries/delete/${documentary.id}`">Delete</router-link>-->
+      </div>
     </div>
     <div v-else>
       <p>Loading...</p>

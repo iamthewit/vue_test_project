@@ -3,6 +3,7 @@ import Home from '@/components/Home.vue';
 import List from '@/components/documentaries/List.vue';
 import Create from '@/components/documentaries/Create.vue';
 import View from '@/components/documentaries/View.vue';
+import Update from "@/components/documentaries/Update.vue";
 
 const routes = [
   {
@@ -21,8 +22,11 @@ const routes = [
     path: '/documentaries/view/:id',
     name: 'View',
     component: View,
+  }, {
+    path: '/documentaries/update/:id',
+    name: 'Update',
+    component: Update,
   }
-
 ];
 
 const router = createRouter({

@@ -8,6 +8,7 @@
   defineOptions({
     name: 'Create',
   });
+
   const router = useRouter();
   const documentary = ref({
     id: uuidv4(),
